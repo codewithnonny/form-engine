@@ -1,15 +1,14 @@
-import React from 'react';
-import { useForm, FormProvider } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { FormConfig } from '../types/form';
-import { FormField } from './FormField';
-import { useFormValidation } from '../hooks/useFormValidation';
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FormConfig } from "../types/form";
+import { FormField } from "./FormField";
+import { useFormValidation } from "../hooks/useFormValidation";
 
 export function Form({ config }: { config: FormConfig }) {
   const schema = useFormValidation(config.fields);
 
   const methods = useForm({
-    resolver: zodResolver(schema)
+    resolver: zodResolver(schema),
   });
 
   const onSubmit = async (data: any) => {
@@ -23,7 +22,10 @@ export function Form({ config }: { config: FormConfig }) {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className="grid grid-cols-2 gap-4">
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className="grid grid-cols-2 gap-4"
+      >
         {config.fields.map((field) => (
           <FormField key={field.name} field={field} />
         ))}

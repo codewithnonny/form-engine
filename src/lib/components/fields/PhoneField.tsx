@@ -1,9 +1,8 @@
-import React from 'react';
-import { useFormContext } from 'react-hook-form';
-import { FieldProps } from '../../types/field';
-import { useFieldStyles } from '../../hooks/useFieldStyles';
-import { IMaskInput } from 'react-imask';
-import { Phone } from 'lucide-react';
+import { useFormContext } from "react-hook-form";
+import { FieldProps } from "../../types/field";
+import { useFieldStyles } from "../../hooks/useFieldStyles";
+import { IMaskInput } from "react-imask";
+import { Phone } from "lucide-react";
 
 export function PhoneField({ field }: FieldProps) {
   const { setValue } = useFormContext();

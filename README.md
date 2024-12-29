@@ -11,28 +11,28 @@ npm install @yourusername/form-engine-sdk
 ## Usage
 
 ```tsx
-import { Form, ThemeProvider, FormConfig } from '@yourusername/form-engine-sdk';
-import { z } from 'zod';
+import { Form, ThemeProvider, FormConfig } from "@deepak.dev/form-engine-sdk";
+import { z } from "zod";
 
 const formConfig: FormConfig = {
   fields: [
     {
-      name: 'email',
-      label: 'Email',
-      type: 'email',
+      name: "email",
+      label: "Email",
+      type: "email",
       validation: z.string().email(),
-      fullWidth: true
-    }
+      fullWidth: true,
+    },
   ],
   onSubmit: async (data) => {
     // Handle submission
   },
   onSuccess: (data) => {
-    console.log('Success:', data);
+    console.log("Success:", data);
   },
   onError: (error) => {
-    console.error('Error:', error);
-  }
+    console.error("Error:", error);
+  },
 };
 
 function MyForm() {
@@ -51,10 +51,6 @@ function MyForm() {
 - 📱 Responsive layout
 - 🔧 Multiple field types
 - 🎯 Type-safe configurations
-
-## Documentation
-
-[Link to your documentation]
 
 ## License
 
